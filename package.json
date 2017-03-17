@@ -1,6 +1,6 @@
 {
   "name": "language-cocobasic",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "TRS-80 Extended Color BASIC language support in Atom",
   "author": "Paulo Garcia <pedgarcia@gmail.com>",
   "license": "ISC",
