@@ -1,0 +1,30 @@
+{
+  "name": "language-cocobasic",
+  "version": "0.0.1",
+  "description": "TRS-80 Extended Color BASIC language support in Atom",
+  "author": "Paulo Garcia <pedgarcia@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://atom.io/packages/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pedgarcia/language-cocobasic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pedgarcia/language-cocobasic/issues"
+  },
+  "keywords": [
+    "Atom",
+    "package",
+    "language",
+    "basic",
+    "trs-80",
+    "coco",
+    "ecb",
+    "syntax",
+    "highlight"
+  ],
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {}
+}

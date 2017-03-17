@@ -1,0 +1,580 @@
+'scopeName': 'source.cocobasic'
+'name': 'TRS-80 Extended Color Basic'
+'fileTypes': ['bas', 'basic']
+'patterns': [
+  { # lines that do not begin with a line number are marked invalid
+    'match': '^\\D+'
+    'name': 'invalid.illegal.cocobasic'
+  }
+  { # numeric constants, which may include scientific notation
+    'match': '(^\\d+)|(\\b(([0-9]+(\\.|\\s*E\\s*)?[0-9]*)|(\\.[0-9]+))\\b)'
+    'captures':
+      '1':
+        'name': 'markup.bold.cocobasic'
+      '2':
+        'name': 'constant.numeric.cocobasic'
+    'name': 'meta.constant.cocobasic'
+  }
+  { # strings
+    'match': '(")([^"]*(")|.*\\n|.*$)'
+    'captures':
+      '1':
+        'name': 'punctuation.definition.string.begin.cocobasic'
+      '2':
+        'name': 'string.quoted.double.cocobasic'
+      '3':
+        'name': 'punctuation.definition.string.begin.cocobasic'
+    'name': 'meta.string.quoted.double.cocobasic'
+  }
+  { # operators
+    'match': ':|;|=|\\+|-|\\*|/|\\^|\\?|!|\\[|\\]|"|&|<|>|\\\\|@|_'
+    'name': 'keyword.operator.cocobasic'
+  }
+# { # functions
+#   'match': '\\b([A-Z]+\\$?)\\s*\\([^)]+\\)'
+#   'captures':
+#     '1':
+#       'name': 'entity.name.function.cocobasic'
+# }
+  { # functions without arguments are invalid
+    'match': '\\b([A-Z]+\\$?)\\s*\\(\\)'
+    'name': 'invalid.illegal.cocobasic'
+  }
+  { # RGB parameter
+    'match': '\\b(RGB)\\b'
+    'name': 'markup.bold.cocobasic'
+  }
+  { # CMP parameter
+    'match': '\\b(CMP)\\b'
+    'name': 'markup.bold.cocobasic'
+  }
+  { # RGB function
+    'match': '\\b(RGB)\\b'
+    'name': 'markup.bold.cocobasic'
+  }
+  { # ABS function
+    'match': '\\b(ABS)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # AND operator
+    'match': '\\b(AND)'
+    'name': 'keyword.operator.cocobasic'
+  }
+  { # ASC function
+    'match': '\\b(ASC)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # ATN function
+    'match': '\\b(ATN)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # ATTR command
+    'match': '\\b(ATTR)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # AUDIO command
+    'match': '\\b(AUDIO)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # BUTTON function
+    'match': '\\b(BUTTON)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # BRK command (ON BRK GOTO)
+    'match': '\\b(BRK)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # CHR$ function
+    'match': '\\b(CHR(\\$|\\b))'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # CIRCLE command
+    'match': '\\b(CIRCLE)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # CLEAR command
+    'match': '\\b(CLEAR)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # CLOAD command
+    'match': '\\b(CLOAD)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # CLOADM command
+    'match': '\\b(CLOADM)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # CLOSE command
+    'match': '\\b(CLOSE)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # CLS command
+    'match': '\\b(CLS)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # COLOR command
+    'match': '\\b(COLOR)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # CONT command
+    'match': '\\b(CONT)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # CSAVE command
+    'match': '\\b(CSAVE)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # CSAVEM command
+    'match': '\\b(CSAVEM)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # COS function
+    'match': '\\b(COS)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # DATA command
+    'match': '\\b(DATA)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # DEF command
+    'match': '\\b(DEF)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # DEFUSR command
+    'match': '\\b(DEFUSR)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # DEL command
+    'match': '\\b(DEL)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # DIM command
+    'match': '\\b(DIM)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # DRAW command
+    'match': '\\b(DRAW)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # EDIT command
+    'match': '\\b(EDIT)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # END command
+    'match': '\\b(END)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # EOF function
+    'match': '\\b(EOF)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # ERLIN function
+    'match': '\\b(ERLIN)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # ERNO function
+    'match': '\\b(ERNO)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+
+  { # ERR command
+    'match': '\\b(ERR)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # EXEC command
+    'match': '\\b(EXEC)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # EXP function
+    'match': '\\b(EXP)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # FIX function
+    'match': '\\b(FIX)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # FN function
+    'match': '\\b(FN)'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # FOR command
+    'match': '\\b(FOR)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # GET command
+    'match': '\\b(GET)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # GET# command
+    'match': '\\b(GET#)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # GOSUB command
+    'match': '\\b(GOSUB)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # GOTO command
+    'match': '\\b(GO(\\s*)?TO)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # HEX$ function
+    'match': '\\b(HEX(\\$|\\b))'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # HPOINT function
+    'match': '\\b(HPOINT)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # HBUFF command
+    'match': '\\b(HBUFF)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # HCIRCLE command
+    'match': '\\b(HCIRCLE)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # HCLS command
+    'match': '\\b(HCLS)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # HCOLOR command
+    'match': '\\b(HCOLOR)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # HDRAW command
+    'match': '\\b(HDRAW)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # HGET command
+    'match': '\\b(HGET)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # HLINE command
+    'match': '\\b(HLINE)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # HPAINT command
+    'match': '\\b(HPAINT)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # HPRINT command
+    'match': '\\b(HPRINT)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # HPUT command
+    'match': '\\b(HPUT)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # HRESET command
+    'match': '\\b(HRESET)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # HSCREEN command
+    'match': '\\b(HSCREEN)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # HSET command
+    'match': '\\b(HSET)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # HSTAT command
+    'match': '\\b(HSTAT)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # INKEY$ function
+    'match': '\\b(INKEY(\\$|\\b))'
+    'name': 'entity.name.function.cocobasic'
+  }
+
+  { # IF command
+    'match': '\\b(IF)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # INPUT command
+    'match': '\\b(INPUT)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # INPUT# command
+    'match': '\\b(INPUT#)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # INT function
+    'match': '\\b(INT)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # INSTR function
+    'match': '\\b(INSTR)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # JOYSTK function
+    'match': '\\b(JOYSTK)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+
+  { # LEFT$ function
+    'match': '\\b(LEFT(\\$|\\b))'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # LEN function
+    'match': '\\b(LEN)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # LET command
+    'match': '\\b(LET)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # LINE command
+    'match': '\\b(LINE)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # LIST command
+    'match': '\\b(LIST)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # LLIST command
+    'match': '\\b(LLIST)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # LOCATE command
+    'match': '\\b(LOCATE)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # LPOKE command
+    'match': '\\b(LPOKE)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # LOAD command
+    'match': '\\b(LOAD)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # LOADM command
+    'match': '\\b(LOADM)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # LOG function
+    'match': '\\b(LOG)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # LPEEK function
+    'match': '\\b(LPEEK)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # MEM function
+    'match': '\\b(MEM)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+
+  { # MID$ function
+    'match': '\\b(MID(\\$|\\b))'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # MOTOR command
+    'match': '\\b(MOTOR)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # NEW command
+    'match': '\\b(NEW)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # NEXT command
+    'match': '\\b(NEXT)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # NOT operator
+    'match': '\\b(NOT)'
+    'name': 'keyword.operator.cocobasic'
+  }
+  { # ON command
+    'match': '\\b(ON)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # OPEN command
+    'match': '\\b(OPEN)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # OR operator
+    'match': '\\b(OR)'
+    'name': 'keyword.operator.cocobasic'
+  }
+  { # POINT function
+    'match': '\\b(POINT)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # PALETTE command
+    'match': '\\b(PALETTE)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # PCLEAR command
+    'match': '\\b(PCLEAR)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # PCLS command
+    'match': '\\b(PCLS)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # PCOPY command
+    'match': '\\b(PCOPY)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # PLAY command
+    'match': '\\b(PLAY)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # PMODE command
+    'match': '\\b(PMODE)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # PEEK function
+    'match': '\\b(PEEK)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # POKE command
+    'match': '\\b(POKE)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # POS function
+    'match': '\\b(POS)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # PPOINT function
+    'match': '\\b(PPOINT)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # PRESET command
+    'match': '\\b(PRESET)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # PRINT command
+    'match': '\\b(PRINT)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # PRINT# command
+    'match': '\\b(PRINT#)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # PSET command
+    'match': '\\b(PSET)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # PUT command
+    'match': '\\b(PUT)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # READ command
+    'match': '\\b(READ)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # REM command (comments)
+    'match': '(REM.*(\\n|$))'
+    'name': 'comment.line.cocobasic'
+  }
+  { # RENUM command
+    'match': '\\b(RENUM)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # RESTORE command
+    'match': '\\b(RESTORE)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # RETURN command
+    'match': '\\b(RETURN)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # RIGHT$ function
+    'match': '\\b(RIGHT(\\$|\\b))'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # RND function
+    'match': '\\b(RND)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # RUN command
+    'match': '\\b(RUN)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # SAVE command
+    'match': '\\b(SAVE)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # SCREEN command
+    'match': '\\b(SCREEN)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # SET command
+    'match': '\\b(SET)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # SKIPF command
+    'match': '\\b(SKIPF)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # SOUND command
+    'match': '\\b(SOUND)'
+    'name': 'keyword.control.cocobasic'
+  }
+
+  { # SGN function
+    'match': '\\b(SGN)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # SIN function
+    'match': '\\b(SIN)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # SPC function
+    'match': '\\b(SPC)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # SQR function
+    'match': '\\b(SQR)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # STEP command
+    'match': '\\b(STEP)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # STOP command
+    'match': '\\b(STOP)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # STR$ function
+    'match': '\\b(STR(\\$|\\b))'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # STRING$ function
+    'match': '\\b(STRING(\\$|\\b))'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # TAB function
+    'match': '\\b(TAB)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # TAN function
+    'match': '\\b(TAN)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # THEN command
+    'match': '\\b(THEN)'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # TIMER function
+    'match': '\\b(TIMER)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # TO command
+    'match': '\b(TO)\b'
+    'name': 'keyword.control.cocobasic'
+  }
+  { # USR function
+    'match': '\\b(USR)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # VAL function
+    'match': '\\b(VAL)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+  { # VALPTR function
+    'match': '\\b(VALPTR)\\b'
+    'name': 'entity.name.function.cocobasic'
+  }
+]
